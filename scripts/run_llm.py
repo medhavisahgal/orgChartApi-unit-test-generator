@@ -11,7 +11,7 @@ if not os.path.exists(prompt_file_path):
 
 with open(prompt_file_path, "r") as f:
     prompt_config = yaml.safe_load(f)
-input_cpp_file = "src/orgChartApi/controllers/JobsController.cpp"
+input_cpp_file = "src/orgChartApi/controllers/JobsController.cc"
 if not os.path.exists(input_cpp_file):
     print(f"C++ file not found: {input_cpp_file}")
     exit(1)
