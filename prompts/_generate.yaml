@@ -1,0 +1,31 @@
+# prompts/_generate.yaml
+
+task: Generate initial unit tests for the given C++ file
+
+input:
+  language: C++
+  description: >
+    You are given a C++ file from a real-world project. Your job is to
+    write initial unit tests using Google Test. The tests should cover
+    the core logic, class methods, and edge cases where possible.
+
+output:
+  format: >
+    One or more properly formatted unit test files using the Google Test framework.
+    The test file should:
+      - Include necessary headers (e.g., gtest/gtest.h and the C++ file under test)
+      - Avoid duplicate test cases
+      - Focus on correctness and meaningful scenarios
+      - Be self-contained and ready to compile
+
+constraints:
+  - Do NOT duplicate test logic
+  - Do NOT generate test cases for getter/setter-only methods unless they have logic
+  - Only include `#include` statements that are actually needed
+  - Use descriptive test names (e.g., `TestClass_Method_Condition`)
+  - Place all test cases in a test namespace
+  - The output file should be named `test_<filename>.cpp`
+
+notes:
+  - These are first-pass tests, so coverage doesn't have to be exhaustive.
+  - Aim for meaningful branch/path testing.
