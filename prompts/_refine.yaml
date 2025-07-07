@@ -1,0 +1,29 @@
+task: Refine and improve the generated unit tests for a given C++ file.
+
+input:
+  language: C++
+  description: >
+    You are given a unit test file written using Google Test.
+    Your task is to improve the quality, formatting, and correctness of these tests.
+
+output:
+  format: >
+    A single clean unit test file that:
+      - Includes only the necessary headers
+      - Uses descriptive and consistent naming
+      - Follows Google Test best practices
+      - Removes duplicate or redundant test cases
+      - Fixes any incorrect or failing logic
+      - Ensures every test has meaningful assertions
+
+constraints:
+  - Do NOT introduce any duplicate test cases
+  - Do NOT test trivial getters/setters unless they contain logic
+  - Use only necessary includes
+  - Format with consistent indentation and spacing
+  - Prefix all test cases with `TEST` macros
+  - Use `EXPECT_`/`ASSERT_` macros appropriately
+
+notes:
+  - If the test file is missing includes or test setup, add them
+  - The file should be self-contained and ready to compile with g++

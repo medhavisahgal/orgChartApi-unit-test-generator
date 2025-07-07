@@ -1,5 +1,3 @@
-# prompts/_generate.yaml
-
 task: Generate initial unit tests for the given C++ file
 
 input:
